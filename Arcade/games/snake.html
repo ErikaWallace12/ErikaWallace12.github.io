@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Snake </title>
+    <link rel="stylesheet" href="/Arcade/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/Arcade/css/style.css">
+    <link rel="stylesheet" href="css/snake.css">
+</head>
+<body>
+    <div class="container heading">
+        <h4 style="text-align: right; margin-bottom: 0;">  
+            <a href='/Arcade/index.html'>Home</a>
+        </h4>   
+        <h1>Snake</h1>
+        <p>Direct the snake using your keyboard arrows to eat as many apples as possible without running into the border. Good luck!</p>
+    </div>
+
+    <div class = "container d-flex justify-content-center">
+        <button type = "button" id = "replay" onclick = "location.reload()"> Play again </button>
+        <canvas id = "snakeCanvas" width = "480" height = "480"> Your browser does not support canvas. </canvas>       
+    </div>
+
+    <script src="/Arcade/js/bootstrap.min.js"></script>
+    <script src="js/snake.js"> </script> 
+</body>
+</html>

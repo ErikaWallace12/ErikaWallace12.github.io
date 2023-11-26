@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Word </title>
+    <link rel="stylesheet" href="/Arcade/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/Arcade/css/style.css">
+    <link rel="stylesheet" href="css/word.css">
+</head>
+<body>
+    <div class="container heading">
+        <h4 style="text-align: right; margin-bottom: 0;">  
+            <a href='/Arcade/index.html'>Home</a>
+        </h4>   
+        <h1>Word</h1>
+        <p>Guess the hidden 5-letter-word in 6 tries. Good luck!</p>
+    </div>
+
+    <div class = "container d-flex justify-content-evenly" style="margin-top: 30px;">
+        <div id = "grid"></div>
+        <div class = "keyboard">
+            <form id = 'form'>
+                <input type = 'text' id = 'userInput' maxlength = '5' oninput = 'this.value = this.value.toUpperCase()' placeholder = 'Guess the hidden word'/>
+                <input type = 'submit' id = 'submit' onclick = 'return executeWordle()' style = 'display: none'/>
+            </form>
+            <div id = 'gameOver'>
+                <h2 id = 'status'></h2>
+                <p id = 'answer'></p>
+                <input type = 'button' id = 'replay' value = 'Play again' onclick = 'location.reload()'/>
+            </div>
+            <div class = 'row'>
+                <input type = 'button' class = 'key' onclick = 'input(this);' id = 'Q' value = 'Q'/>
+                <input type = 'button' class = 'key' onclick = 'input(this);' id = 'W' value = 'W'/>
+                <input type = 'button' class = 'key' onclick = 'input(this);' id = 'E' value = 'E'/>
+                <input type = 'button' class = 'key' onclick = 'input(this);' id = 'R' value = 'R'/>
+                <input type = 'button' class = 'key' onclick = 'input(this);' id = 'T' value = 'T'/>
+                <input type = 'button' class = 'key' onclick = 'input(this);' id = 'Y' value = 'Y'/>
+                <input type = 'button' class = 'key' onclick = 'input(this);' id = 'U' value = 'U'/>
+                <input type = 'button' class = 'key' onclick = 'input(this);' id = 'I' value = 'I'/>
+                <input type = 'button' class = 'key' onclick = 'input(this);' id = 'O' value = 'O'/>
+                <input type = 'button' class = 'key' style = 'margin-right: 0px;' onclick = 'input(this);' id = 'P' value = 'P'/>  
+            </div>
+            <div class = 'row'>
+                <div class = 'halfKey'></div>
+                <input type = 'button' class = 'key' onclick = 'input(this);' id = 'A' value = 'A'/>
+                <input type = 'button' class = 'key' onclick = 'input(this);' id = 'S' value = 'S'/>
+                <input type = 'button' class = 'key' onclick = 'input(this);' id = 'D' value = 'D'/>
+                <input type = 'button' class = 'key' onclick = 'input(this);' id = 'F' value = 'F'/>
+                <input type = 'button' class = 'key' onclick = 'input(this);' id = 'G' value = 'G'/>
+                <input type = 'button' class = 'key' onclick = 'input(this);' id = 'H' value = 'H'/>
+                <input type = 'button' class = 'key' onclick = 'input(this);' id = 'J' value = 'J'/>
+                <input type = 'button' class = 'key' onclick = 'input(this);' id = 'K' value = 'K'/>
+                <input type = 'button' class = 'key' style = 'margin-right: 0px;' onclick = 'input(this);' id = 'L' value = 'L'/> 
+                <div class = 'halfKey'></div>
+            </div>
+            <div class = 'row'>
+                <input type = 'button' class = 'key' style = 'width: 75px;' onclick = 'return executeWordle()' id = 'ENTER' value = 'ENTER'/>
+                <input type = 'button' class = 'key' onclick = 'input(this);' id = 'Z' value = 'Z'/><input type = 'button' class = 'key' onclick = 'input(this);' id = 'X' value = 'X'/><input type = 'button' class = 'key' onclick = 'input(this);' id = 'C' value = 'C'/><input type = 'button' class = 'key' onclick = 'input(this);' id = 'V' value = 'V'/><input type = 'button' class = 'key' onclick = 'input(this);' id = 'B' value = 'B'/><input type = 'button' class = 'key' onclick = 'input(this);' id = 'N' value = 'N'/><input type = 'button' class = 'key' onclick = 'input(this);' id = 'M' value = 'M'/>
+                <input type = 'button' class = 'key' style = 'margin-right: 0px; width: 75px;' onclick = 'del();' id = 'BACK' value = 'BACK'/>
+            </div>   
+        </div>
+    </div>
+
+    <script src="/Arcade/js/bootstrap.min.js"></script>
+    <script src="js/wordBank.js"> </script> 
+    <script src="js/word.js"> </script> 
+</body>
+</html>
